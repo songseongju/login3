@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+
+    <!-- resultType = select O insert X   mybatis 페이지 참조 -->
+
+    <!-- * -> 목록 다 쳐주는게 좋음
+    select *
+    from member.merber2
+    where member_email = #{id}
+    and member_pwd = #{pw}
+    -->
+
+     <select id="getUserList" resultType="com.example.domain.MemberDTO">
+
+        SELECT * FROM member.member2;
+
+    </select>
+
+
+    <select id="getAllDataList"  resultType="com.example.domain.Product">
+
+        select * from member.member2;
+
+    </select>
+
+
+
+    <!-- 로그인 -->
+    <select id="getUserAccount" resultType="com.example.domain.UserVo">
+
+        SELECT * FROM TB_USER
+        WHERE USER_ID= #{userId}
+
+    </select>
+
+
+
+    <!-- 회원가입 -->
+    <insert id="saveUser"  parameterType="com.example.domain.UserVo">
+
+        INSERT INTO tb_user
+        (USER_ID
+        , USER_PW
+        , USER_NAME
+        , USER_AUTH
+        , APPEND_DATE
+        , UPDATE_DATE
+        ) VALUES(
+        #{userId}
+        ,#{userPw}
+        ,#{userName}
+        ,#{userAuth}
+        ,#{appendDate}
+        ,#{updateDate}
+        );
+
+    </insert>
+<!--
+    <insert id="signUser" >
+        insert into member.member2 (
+         member_id          -->   <!-- My SQL Auto increment -->
+    <!--    ,member_email
+        ,member_pwd
+        ,member_username
+        ,member_regi_date
+        ,member_intro
+        ,member_birth
+        ) values (
+
+        4--> <!-- My SQL Auto increment 적용후 삭제-->
+  <!--      , #{id}
+        , #{pw}
+        , '1234'
+        , '123445'
+        , '123445'
+        , '123312312'
+        , '12312313'
+        , '20230921'
+        )
+    </insert>
+-
+-->
+    <!-- 아이디로 회원 정보 가져오기(중복) -->
+ <!--   <select id="useById" parameterType="java.lang.String" resultType="com.example.domain.MemberDTO">
+        SELECT *
+        FROM member.member2
+        WHERE member_email = #{email}
+    </select>  -->
+
+
+    <!--회원가입--> <!--
+    <insert id="insert" parameterType="com.example.domain.MemberDTO">
+        INSERT INTO common_member (
+        member_id        -->     <!-- My SQL Auto increment -->
+<!--        ,member_email
+        ,member_pwd
+        ,member_username
+        ,member_regi_date
+        ,member_intro
+        ,member_birth
+        ) VALUES (
+       5,
+        , #{email}
+        , #{pw}
+        , #{username}
+        , #{regi}
+        , #{intro}
+        )
+    </insert>
+-->
+
+    <!-- tb_member 테이블 전체 컬럼 -->
+
+
+    </mapper>

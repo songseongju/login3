@@ -1,4 +1,4 @@
-package com.example.config;
+/*package com.example.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,3 +14,4 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/");
     }
 }
+*/

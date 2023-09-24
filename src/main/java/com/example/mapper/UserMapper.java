@@ -1,18 +1,14 @@
 package com.example.mapper;
 
-import com.example.domain.User;
+import com.example.domain.UserVo;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
-import java.util.List;
-import java.util.Map;
 
 @Mapper
-@Repository
 public interface UserMapper {
+    // 로그인
+    UserVo getUserAccount(String userId);
+    // 회원가입
+    void saveUser(UserVo userVo);
 
-    List<User> getUserList();
-
-    //3. xml 매핑시켜주기 -> xml매핑 후 가져오기
-    void signUser(Map<String, Object> param);
 
 }

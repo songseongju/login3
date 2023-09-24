@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <label for="firstName" class="fl fontLabel"> 이름: </label>
+    <div class="new iconBox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+    </div>
+    <div class="fr">
+        <input type="text" name="name" placeholder="이름.."
+               class="textBox" autofocus="on" required>
+    </div>
+    <div class="clr"></div>
+</div>
+<!--name-->
+
+<!---Phone No.------>
+<div class="box">
+    <label for="phone" class="fl fontLabel"> 핸드폰번호: </label>
+    <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+    <div class="fr">
+        <input type="text" required name="phone" maxlength="10" placeholder="핸드폰번호.." class="textBox">
+    </div>
+    <div class="clr"></div>
+</div>
+<!---Phone No.---->
+
+<!---Email ID---->
+<div class="box">
+    <label for="email" class="fl fontLabel"> 이메일: </label>
+    <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+    <div class="fr">
+        <input type="email" required name="email" placeholder="이메일.." class="textBox">
+    </div>
+    <div class="clr"></div>
+</div>
+<!--Email ID----->
+
+<!---Password------>
+<div class="box">
+    <label for="password" class="fl fontLabel"> 비밀번호 </label>
+    <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    <div class="fr">
+        <input type="Password" required name="password" placeholder="비밀번호.." class="textBox">
+    </div>
+    <div class="clr"></div>
+</div>
+<!---Password---->
+
+<!---Gender----->
+<div class="box radio">
+    <label for="gender" class="fl fontLabel"> 성별: </label>
+    <input type="radio" name="gender" value="Male" required> 남성 &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="radio" name="gender" value="Female" required> 여성
+</div>
+<!---Gender--->
+</body>
+</html>
