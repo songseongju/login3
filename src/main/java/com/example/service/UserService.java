@@ -17,6 +17,7 @@ import java.util.Date;
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService{
+
     // 회원가입 시 저장시간을 넣어줄 DateTime형
     SimpleDateFormat format = new SimpleDateFormat( "yyyy-MM-dd HH:mm:sss");
     Date time = new Date();
@@ -24,6 +25,7 @@ public class UserService implements UserDetailsService{
 
     @Autowired
     UserMapper userMapper;
+
 
     @Transactional
     public void joinUser(UserVo userVo){
@@ -33,6 +35,20 @@ public class UserService implements UserDetailsService{
         userVo.setAppendDate(localTime);
         userVo.setUpdateDate(localTime);
         userMapper.saveUser(userVo);
+    }
+
+     //회원가입 유효성 검사
+    public boolean register(String id , String pw , String username) {
+
+        if (id == null || id.isEmpty()
+                || pw == null || pw.isEmpty()
+                || username == null || username.isEmpty()
+        ) {
+            return false;
+        }
+        // 이미 사용 중인 아이디 검사
+
+    return false;
 
     }
 
